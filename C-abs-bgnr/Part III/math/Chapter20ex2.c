@@ -16,10 +16,6 @@ int main()
 
 	do
 	{
-		printf("Start Game?\n");
-		printf("(Y/N)\n");
-		scanf(" %c", &isGameOver);
-
 		int dice1, dice2;
 		int total1, total2;
 		char ans;
@@ -32,7 +28,7 @@ int main()
 		dice1 = (rand() % 5) + 1;
 		dice2 = (rand() % 5) + 1;
 		total1 = dice1 + dice2;
-		printf("First roll of the dice was %d and %d, ", dice1, dice2);
+		printf("\n\nFirst roll of the dice was %d and %d, ", dice1, dice2);
 		printf("for a total of %d.\n\n\n", total1);
 
 		do
@@ -51,7 +47,7 @@ int main()
 		total2 = dice1 + dice2;
 
 		// Display the second total for the user
-		printf("\nThe second roll was %d and %d, ", dice1, dice2);
+		printf("\n\nThe second roll was %d and %d, ", dice1, dice2);
 		printf("for a total of %d.\n\n", total2);
 
 		// Now compare the two dice totals against the user's guess
@@ -102,5 +98,9 @@ int main()
 
 			return (0);
 		}
+
+		printf("\n\nContinue Game?\n");
+		printf("(Y/N)\n\n");
+		scanf(" %c", &isGameOver);
 	} while (isGameOver != 'N');
 }
