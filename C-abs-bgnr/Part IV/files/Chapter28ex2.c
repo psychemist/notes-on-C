@@ -14,7 +14,8 @@ int main()
 
 	if (fptr != 0)
 	{
-		// feof() checks if program has reached the the last line of file
+		// feof() checks if program has reached the end-of-file to ensure
+		// you do not read past the last line of the file
 		while (!feof(fptr))
 		{
 			fgets(fileLine, 100, fptr);
