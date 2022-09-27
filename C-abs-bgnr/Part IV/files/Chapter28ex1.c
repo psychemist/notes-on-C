@@ -32,7 +32,7 @@ int main()
 	// Remember to double up backslashes when typing your filepath or
 	// C will think you are putting in a conversion character
 
-	fptr = fopen("bookinfo.txt", "w");
+	fptr = fopen("bookinfo.txt", "w"); // "w": write; "a": append; "r": read
 
 	// Test to ensure that file opened
 	if (fptr == 0)
