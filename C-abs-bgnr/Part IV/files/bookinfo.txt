@@ -1,0 +1,12 @@
+
+
+Here is the collection of books: 
+#1: Americanah by Chimamanda Adichie
+It is 777 pages and cost $11.99
+
+#2: Things Fall Apart by Chinua Achebe
+It is 321 pages and cost $10.50
+
+#3: Everything Good Will Come by Sefi Attah
+It is 432 pages and cost $7.00
+
