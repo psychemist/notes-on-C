@@ -4,7 +4,7 @@
 #define UPPER 300
 #define STEP 20
 
-/* print Fahrenheit-Celsius table in reverse */
+/* Print Fahrenheit-Celsius table in reverse */
 
 int main()
 {
