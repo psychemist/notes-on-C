@@ -3,15 +3,16 @@
 
 int main()
 {
-    char c, d = '0';
+    char ch, prev = '0';
 
-    while ((c = getchar()) != EOF) {
-        if (c == ' ' && d == ' ') {
+    while ((ch = getchar()) != EOF) {
+        if (ch == ' ' && prev == ' ') {
             ;
         }
         else {
-            putchar(c);
-            d = c;
+            putchar(ch);
+            :x
+:x
         }
     }
 }
