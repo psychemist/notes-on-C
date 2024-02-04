@@ -3,23 +3,22 @@
 
 int main()
 {
-    int ch, i, val;
-    int characters[128];
+    int ch, i;
+    int chars[128];
 
     for (i = 0; i < 128; i++)
-        characters[i] = 0;
+        chars[i] = 0;
 
     while ((ch = getchar()) != EOF)
-        characters[(int)ch]++;
+        chars[(int)ch]++;
 
-    for (i = 0; i < 128; i++) {
-        // loop over characters array excluding first 32 control characters
-        val = characters[i];
-        if (i >= 32 && val != 0) {
-            printf("%c : (%d) :: ", i, val);
-
+    printf("\nCHAR   COUNT    FREQ\n");
+    // loop over characters array excluding first 32 control characters
+    for (i = 32; i < 128; i++) {
+        if (chars[i] != 0) {
             // print histogram of character frequencies
-            for (int x = 0; x < val; x++)
+            printf(" %c   :  (%d)  :  ", i, chars[i]);
+            for (int x = 0; x < chars[i]; x++)
                 putchar('-');
             printf(">\n");
         }
