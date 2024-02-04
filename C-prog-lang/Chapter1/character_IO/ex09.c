@@ -3,7 +3,7 @@
 
 int main()
 {
-    char ch, prev = '0';
+    int ch, prev = 0;
 
     while ((ch = getchar()) != EOF) {
         if (ch == ' ' && prev == ' ') {
@@ -11,8 +11,7 @@ int main()
         }
         else {
             putchar(ch);
-            :x
-:x
+            prev = ch;
         }
     }
 }
