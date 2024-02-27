@@ -1,7 +1,6 @@
 #include <stdio.h>
 
 #define MAXLINE 1000 /* maximum input line size */
-#define MAXCHAR 81 /* maximum arbitrary line length */
 
 int get_line(char line[], int maxline);
 void copy(char to[], char from[]);
@@ -11,26 +10,29 @@ int main()
 {
     int len; /* current line length */
     int max; /* maximum length seen so far */
-    int nums; /* number of lines above character limit */
     char line[MAXLINE]; /* current input line */
     char longest[MAXLINE]; /* longest line saved here */
 
-    max = nums = 0;
+    max = 0;
 
     while ((len = get_line(line, MAXLINE)) > 0) {
+        /* check that full word is read into buffer else get full length */
+        if (line[len - 1] != '\n') {
+            int c;
+            while ((c = getchar()) != EOF && c != '\n')
+                len++;
+            if (c == '\n')
+                len++;
+        }
+
         if (len > max) {
             max = len;
             copy(longest, line);
         }
-
-        if (len >= MAXCHAR) {
-            ++nums;
-            printf("%i - Length: %i\n\n", nums, len);
-        }
     }
 
     if (max > 0) /* input line present */
-        printf ("\nLONGEST LINE: %sNUMBER OF CHARACTERS: %i\n" , longest, max - 1);
+        printf ("\nLONGEST LINE: %s\nNUMBER OF CHARACTERS: %i\n" , longest, max);
     return 0;
 }
 
