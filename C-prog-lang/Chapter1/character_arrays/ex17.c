@@ -1,9 +1,10 @@
 #include <stdio.h>
 
 #define MAXLINE 1000 /* maximum input line size */
-#define MAXCHAR 81 /* minimum printed line length */
+#define MAXCHAR 80 /* minimum printed line length */
 
 int get_line(char line[], int maxline);
+int array[MAXLINE][MAXCHAR];
 
 /* print lengths and text of input lines longer than 80 characters */
 int main()
