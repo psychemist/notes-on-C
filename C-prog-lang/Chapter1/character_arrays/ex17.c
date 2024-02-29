@@ -17,7 +17,6 @@ int main()
     while ((len = get_line(line, MAXLINE)) > 0) {
         if (len > MAXCHAR) {
             ++nums;
-            if (line[len - 1] == '\n') --len;
             printf("%i - Length: %i\n%s\n", nums, len, line);
         }
     }
