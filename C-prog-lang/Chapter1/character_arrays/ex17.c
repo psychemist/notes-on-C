@@ -4,7 +4,6 @@
 #define MAXCHAR 80 /* minimum printed line length */
 
 int get_line(char line[], int maxline);
-int array[MAXLINE][MAXCHAR];
 
 /* print lengths and text of input lines longer than 80 characters */
 int main()
@@ -12,18 +11,16 @@ int main()
     int len; /* current line length */
     int nums; /* number of lines above character limit */
     char line[MAXLINE]; /* current input line */
-    char lines[];
 
     nums = 0;
 
     while ((len = get_line(line, MAXLINE)) > 0) {
-        if (len >= MAXCHAR) {
+        if (len > MAXCHAR) {
             ++nums;
-            printf("%i - Length: %i\n\n", nums, len - 1);
+            if (line[len - 1] == '\n') --len;
+            printf("%i - Length: %i\n%s\n", nums, len, line);
         }
     }
-
-    lines = malloc();
 
     return 0;
 }
