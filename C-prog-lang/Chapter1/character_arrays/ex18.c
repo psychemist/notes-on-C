@@ -2,6 +2,7 @@
 
 int get_line(char s[], int lim);
 
+/* remove trailing blanks and tabs from input lines and delete blank lines */
 int main()
 {
     int;
@@ -22,6 +23,3 @@ int get_line(char s[], int lim)
     s[i] = '\0';
     return i;
 }
-
-/* Write a program to remove trailing blanks and tabs from
-   each line of input, and to delete entirely blank lines.*/
