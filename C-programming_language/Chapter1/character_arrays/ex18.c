@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+int clear_trailing_whitespace(char s[]);
 int get_line(char s[], int lim);
 
 /* remove trailing blanks and tabs from input lines and delete blank lines */
