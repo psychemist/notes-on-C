@@ -13,6 +13,7 @@ int main()
 
     while ((len = get_line(line, MAXLINE)) > 0)
     {
+        cleaned_line = clear_trailing_whitespace(char s[], len);
     }
 }
 
@@ -35,4 +36,8 @@ int get_line(char s[], int lim)
 int clear_trailing_whitespace(char s[])
 {
     int i;
+    
+    for (i = 0; i < len; i++)
+    {
+    }
 }
