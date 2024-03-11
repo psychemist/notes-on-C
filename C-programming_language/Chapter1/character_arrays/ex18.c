@@ -2,7 +2,7 @@
 
 #define MAXLINE 1000 /* maximum input line size */
 
-int clear_trailing_whitespace(char s[], int len);
+void clear_trailing_whitespace(char *s, int len);
 int get_line(char s[], int lim);
 
 /* remove trailing blanks and tabs from input lines and delete blank lines */
@@ -13,7 +13,8 @@ int main()
 
     while ((len = get_line(line, MAXLINE)) > 0)
     {
-        printf("%s", clear_trailing_whitespace(line, len));
+        clear_trailing_whitespace(line, len);
+        printf("%s\n", line);
     }
 }
 
@@ -33,11 +34,21 @@ int get_line(char s[], int lim)
     return i;
 }
 
-int clear_trailing_whitespace(char s[], int len)
+void clear_trailing_whitespace(char *s, int len)
 {
     int i;
 
-    for (i = 0; i < len; i++)
+    for (i = len - 1; i > 0; i--)
     {
+        if (s[i + 1] == '\0')
+        {
+            if (s[i] == '\t' || s[i] == ' ' || s[i] == '\n')
+            {
+                s[i] = '\0';
+            }
+        }
     }
+
+    if (i == 0 && (s[i] == '\t' || s[i] == ' ') && s[i + 1] == '\0')
+        s[i] = '\0';
 }
