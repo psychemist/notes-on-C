@@ -3,7 +3,7 @@
 #define MAXLINE 1000 /* maximum input line size */
 
 int get_line(char line[], int maxline);
-int reverse_line(char s[]);
+int reverse(char s[]);
 
 /* reverses character input a line at a time */
 int main()
@@ -14,7 +14,7 @@ int main()
     // check that line is not blank
     while ((len = get_line(line, MAXLINE)) > 0)
     {
-        lens = reverse_line(line);
+        lens = reverse(line);
         // verify that length of original line equals length of reversed line
         if (len == lens)
             printf("%s\n", line);
@@ -32,6 +32,11 @@ int get_line(char s[], int lim)
     for (i = 0; i < lim - 1 && (c = getchar()) != EOF && c != '\n'; ++i)
         s[i] = c;
     // add null terminator after new line character
+    if (c == '\n')
+    {
+        s[i] = c;
+        ++i;
+    }
     s[i] = '\0';
     return i;
 }
@@ -42,7 +47,7 @@ int get_line(char s[], int lim)
  * @s: variable holding the pointer
  * Return: void
  */
-int reverse_line(char s[])
+int reverse(char s[])
 {
     int len, i, mid;
     char temp;
