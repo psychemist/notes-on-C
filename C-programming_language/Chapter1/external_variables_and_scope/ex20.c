@@ -1,10 +1,19 @@
 #include <stdio.h>
 
-#define TABSPACES 4
+#define TABSPACES 4  /* number of columns in a set of tab stops */
+#define MAXLINE 1000 /* maximum input line size */
 
-
-int main ()
+int main()
 {
+    int len, lens;
+    char line[MAXLINE];
+
+    // check that line is not blank
+    while ((len = get_line(line, MAXLINE)) > 0)
+    {
+    }
+
+    return 0;
 }
 
 /* get_line: read a line into s, return length */
@@ -25,7 +34,6 @@ int get_line(char s[], int lim)
     return i;
 }
 
-
-int detab ()
+int detab()
 {
 }
