@@ -3,6 +3,8 @@
 #define TABSPACES 4  /* number of columns in a set of tab stops */
 #define MAXLINE 1000 /* maximum input line size */
 
+int detab(char s[]);
+
 int main()
 {
     int len, lens;
@@ -34,6 +36,6 @@ int get_line(char s[], int lim)
     return i;
 }
 
-int detab()
+int detab(char s[])
 {
 }
