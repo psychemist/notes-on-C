@@ -52,13 +52,15 @@ int reverse(char s[])
     int len, i, mid;
     char temp;
 
+    // get length of line
     for (len = 0; s[len] != '\0'; len++)
         ;
 
+    // find mid-length pivot
     i = 0;
     mid = len / 2;
 
-    // loop over line and exchange characters between indices
+    // loop over line and exchange characters across opposite indices
     while (mid--)
     {
         temp = s[len - 1 - i];
