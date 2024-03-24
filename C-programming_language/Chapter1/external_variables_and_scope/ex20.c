@@ -13,6 +13,7 @@ int main()
     // check that line is not blank
     while ((len = get_line(line, MAXLINE)) > 0)
     {
+        detab(line);
     }
 
     return 0;
