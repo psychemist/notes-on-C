@@ -4,19 +4,19 @@
 #define MAXLINE 1000 /* maximum input line size */
 
 int get_line(char s[], int lim);
-char *detab(char s[]);
+void detab(char s[], char str[]);
 
 /* change tabs in input line to spaces */
 int main()
 {
-    int len, lens;
-    char line[MAXLINE];
-    char spaced_line[MAXLINE];
+    int len;
+    char line[MAXLINE], spaced_line[MAXLINE];
 
     // check that line is not blank
     while ((len = get_line(line, MAXLINE)) > 0)
     {
-        spaced_line = detab(line);
+        /* detab input line and print result*/
+        detab(line, spaced_line);
         printf("%s", spaced_line);
     }
 
@@ -44,27 +44,34 @@ int get_line(char s[], int lim)
 }
 
 /* replace tabs in input with blanks to space to the next tab stop */
-char *detab(char s[])
+void detab(char s[], char str[])
 {
-    char new_line[MAXLINE];
-    int i = 0;
+    /* declare and initialize line indices*/
+    int i, j;
+    i = j = 0;
 
+    /* loop over input line*/
     while (s[i] != '\0')
     {
-        new_line[i] = s[i];
-
+        /* if character in string index is a tab, detab*/
         if (s[i] == '\t')
         {
-            for (int j = 0; j < TABSPACES; j++)
+            /* insert number of spaces in tabspaces constant into line */
+            for (int k = 0; k < TABSPACES; j++, k++)
             {
-                new_line[i] = '\b';
+                str[j] = ' ';
             }
-            i - TABSPACES;
+        }
+        /* if character in string index is not a tab, copy*/
+        else
+        {
+            str[j] = s[i];
+            j++;
         }
 
         i++;
     }
-    new_line[i] = '\0';
 
-    return new_line;
+    /* terminate string with null character*/
+    str[j] = '\0';
 }
